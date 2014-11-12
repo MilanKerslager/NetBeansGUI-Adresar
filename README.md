@@ -18,5 +18,5 @@ The project is under [MIT Licence](https://github.com/MilanKerslager/GUI-Adresar
 3. pull it into your own new project in NetBeans
 4. make your own changes
  - you have to check task list written on the table in the classroom
-5. submit you changes to your forked project
-6. make pull request
+5. submit your changes to your forked project
+6. make pull request to upstream (ie. here)
