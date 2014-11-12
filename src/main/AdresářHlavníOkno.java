@@ -14,6 +14,7 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
     DefaultListModel seznamEmail = new DefaultListModel();
     int nahrazuji = -1;
     Formular formular = new Formular();
+    int counter=0;
     
     public AdresářHlavníOkno() {
         initComponents();
@@ -49,6 +50,7 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
         jRadioButtonZena = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         jPanelFotka = new javax.swing.JPanel();
+        jLabelCounter = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -123,12 +125,6 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
 
         jLabel2.setText("Jméno:");
 
-        jTextJmeno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextJmenoActionPerformed(evt);
-            }
-        });
-
         jLabel4.setText("Příjmení:");
 
         jLabel5.setText("Rodné:");
@@ -136,11 +132,6 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
         jLabel6.setText("Stav:");
 
         jTextRodne.setEnabled(false);
-        jTextRodne.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextRodneActionPerformed(evt);
-            }
-        });
 
         buttonGroupPohlavi.add(jRadioButtonMuz);
         jRadioButtonMuz.setSelected(true);
@@ -178,6 +169,8 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
             .addGap(0, 106, Short.MAX_VALUE)
         );
 
+        jLabelCounter.setText("Počitadlo");
+
         javax.swing.GroupLayout jPanelVrchníLayout = new javax.swing.GroupLayout(jPanelVrchní);
         jPanelVrchní.setLayout(jPanelVrchníLayout);
         jPanelVrchníLayout.setHorizontalGroup(
@@ -187,26 +180,34 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
                 .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanelVrchníLayout.createSequentialGroup()
-                        .addComponent(jRadioButtonMuz)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jRadioButtonZena))
-                    .addComponent(jTextJmeno)
-                    .addComponent(jComboBoxStav, 0, 179, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
                 .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelVrchníLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(13, 13, 13))
+                    .addGroup(jPanelVrchníLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelCounter)
+                            .addGroup(jPanelVrchníLayout.createSequentialGroup()
+                                .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(jPanelVrchníLayout.createSequentialGroup()
+                                        .addComponent(jRadioButtonMuz)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jRadioButtonZena))
+                                    .addComponent(jTextJmeno)
+                                    .addComponent(jComboBoxStav, 0, 179, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextField3)
                     .addComponent(jTextRodne)
                     .addGroup(jPanelVrchníLayout.createSequentialGroup()
                         .addComponent(jPanelFotka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(0, 109, Short.MAX_VALUE))))
         );
         jPanelVrchníLayout.setVerticalGroup(
             jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,10 +228,13 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
                 .addGap(11, 11, 11)
                 .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelFotka, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jComboBoxStav, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel6)
-                        .addComponent(jLabel3)))
+                    .addGroup(jPanelVrchníLayout.createSequentialGroup()
+                        .addGroup(jPanelVrchníLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBoxStav, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel3))
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabelCounter)))
                 .addContainerGap())
         );
 
@@ -322,14 +326,6 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
         nahrazuji = jListEmail.getSelectedIndex();
     }//GEN-LAST:event_jButtonZmenitActionPerformed
 
-    private void jTextJmenoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextJmenoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextJmenoActionPerformed
-
-    private void jTextRodneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextRodneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextRodneActionPerformed
-
     private void jRadioButtonZenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonZenaActionPerformed
         jTextRodne.setEnabled(true);
         jComboBoxStav.removeAllItems();
@@ -338,6 +334,8 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonZenaActionPerformed
 
     private void jRadioButtonMuzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMuzActionPerformed
+        counter++;
+        jLabelCounter.setText(Integer.toString(counter));
         jTextRodne.setText("");
         jTextRodne.setEnabled(false);
         jComboBoxStav.removeAllItems();
@@ -398,6 +396,7 @@ public class AdresářHlavníOkno extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabelCounter;
     private javax.swing.JList jListEmail;
     private javax.swing.JPanel jPanelFotka;
     private javax.swing.JPanel jPanelSpodní;
